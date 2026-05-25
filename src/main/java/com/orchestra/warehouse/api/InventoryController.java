@@ -1,5 +1,6 @@
 package com.orchestra.warehouse.api;
 
+import com.orchestra.common.api.ApiResponse;
 import com.orchestra.warehouse.dto.InventoryItemDto;
 import com.orchestra.warehouse.service.InventoryService;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,8 @@ public class InventoryController {
     private final InventoryService inventoryService;
 
     @GetMapping
-    public ResponseEntity<List<InventoryItemDto>> getAll() {
-        return ResponseEntity.ok(inventoryService.findAll());
+    public ResponseEntity<ApiResponse<List<InventoryItemDto>>> getAll() {
+        return ResponseEntity.ok(ApiResponse.ok(inventoryService.findAll()));
     }
 
     @GetMapping("/{id}")
@@ -27,17 +28,17 @@ public class InventoryController {
     }
 
     @GetMapping("/by-sku/{sku}")
-    public ResponseEntity<InventoryItemDto> getBySku(@PathVariable String sku) {
-        return ResponseEntity.ok(inventoryService.findBySku(sku));
+    public ResponseEntity<ApiResponse<InventoryItemDto>> getBySku(@PathVariable String sku) {
+        return ResponseEntity.ok(ApiResponse.ok(inventoryService.findBySku(sku)));
     }
 
     @GetMapping("/out-of-stock")
-    public ResponseEntity<List<InventoryItemDto>> getOutOfStock() {
-        return ResponseEntity.ok(inventoryService.findOutOfStock());
+    public ResponseEntity<ApiResponse<List<InventoryItemDto>>> getOutOfStock() {
+        return ResponseEntity.ok(ApiResponse.ok(inventoryService.findOutOfStock()));
     }
 
     @GetMapping("/fully-reserved")
-    public ResponseEntity<List<InventoryItemDto>> getFullyReserved() {
-        return ResponseEntity.ok(inventoryService.findFullyReserved());
+    public ResponseEntity<ApiResponse<List<InventoryItemDto>>> getFullyReserved() {
+        return ResponseEntity.ok(ApiResponse.ok(inventoryService.findFullyReserved()));
     }
 }

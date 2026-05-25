@@ -1,5 +1,6 @@
 package com.orchestra.crm.api;
 
+import com.orchestra.common.api.ApiResponse;
 import com.orchestra.crm.dto.CustomerDto;
 import com.orchestra.crm.service.CustomerService;
 import lombok.RequiredArgsConstructor;
@@ -17,17 +18,17 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @GetMapping
-    public ResponseEntity<List<CustomerDto>> getAll() {
-        return ResponseEntity.ok(customerService.findAll());
+    public ResponseEntity<ApiResponse<List<CustomerDto>>> getAll() {
+        return ResponseEntity.ok(ApiResponse.ok(customerService.findAll()));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CustomerDto> getById(@PathVariable UUID id) {
-        return ResponseEntity.ok(customerService.findById(id));
+    public ResponseEntity<ApiResponse<CustomerDto>> getById(@PathVariable UUID id) {
+        return ResponseEntity.ok(ApiResponse.ok(customerService.findById(id)));
     }
 
     @GetMapping("/by-external-id/{externalId}")
-    public ResponseEntity<CustomerDto> getByExternalId(@PathVariable String externalId) {
-        return ResponseEntity.ok(customerService.findByExternalId(externalId));
+    public ResponseEntity<ApiResponse<CustomerDto>> getByExternalId(@PathVariable String externalId) {
+        return ResponseEntity.ok(ApiResponse.ok(customerService.findByExternalId(externalId)));
     }
 }
