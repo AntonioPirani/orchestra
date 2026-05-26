@@ -2,8 +2,8 @@
 -- USERS
 -- ─────────────────────────────────────────
 INSERT INTO users (id, username, password, role) VALUES
-    ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'admin', '$2a$12$7Ke5GTSX6jBgaOGQU6V4wOlMCcBiYFwFYJutGDj2X4UPd9SzJyUyO', 'ROLE_ADMIN'),
-    ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12', 'user',  '$2a$12$7Ke5GTSX6jBgaOGQU6V4wOlMCcBiYFwFYJutGDj2X4UPd9SzJyUyO', 'ROLE_USER');
+    ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'admin', '$2a$10$/PS.yvmJZoE94MGhk1.HxeKQM2GjTxDvEMCN5R1N2KXancfqzKwtW', 'ROLE_ADMIN'),
+    ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12', 'user',  '$2a$10$/PS.yvmJZoE94MGhk1.HxeKQM2GjTxDvEMCN5R1N2KXancfqzKwtW', 'ROLE_USER');
 
 -- ─────────────────────────────────────────
 -- CRM
